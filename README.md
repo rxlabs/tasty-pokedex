@@ -5,6 +5,7 @@
 [![David](https://img.shields.io/david/rxlabs/tasty-pokedex.svg)](https://david-dm.org/rxlabs/tasty-pokedex)
 [![David](https://img.shields.io/david/dev/rxlabs/tasty-pokedex.svg)](https://david-dm.org/rxlabs/tasty-pokedex#info=devDependencies)
 [![Travis](https://img.shields.io/travis/rxlabs/tasty-pokedex.svg)](https://travis-ci.org/rxlabs/tasty-pokedex)
+[![Codecov](https://img.shields.io/codecov/c/github/rxlabs/tasty-pokedex.svg)](https://codecov.io/gh/rxlabs/tasty-pokedex)
 
 > Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).
 

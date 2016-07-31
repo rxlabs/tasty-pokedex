@@ -7,3 +7,8 @@ node_js:
 cache:
   directories:
     - node_modules
+
+after_script:
+  - npm install -g codecov
+  - npm run nyc -- report --reporter=lcov
+  - codecov
