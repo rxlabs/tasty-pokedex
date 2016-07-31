@@ -15,7 +15,9 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
+    "brunch": "brunch",
     "flow": "flow",
+    "gulp": "gulp",
 
     "test": "true",
       "pretest": "gulp lint && flow",
