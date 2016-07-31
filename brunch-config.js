@@ -33,6 +33,8 @@ exports.config = {
   },
 
   plugins: {
+    babel: JSON.parse(require('fs').readFileSync('.babelrc')),
+
     digest: {
       prependHost: {
         production: '/tasty-pokedex'
