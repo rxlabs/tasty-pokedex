@@ -5,6 +5,13 @@ exports.config = {
     }
   },
 
+  conventions: {
+    ignored: [
+      /[\\/]_/,
+      /\.spec\.js$/
+    ]
+  },
+
   files: {
     javascripts: {
       joinTo: {
