@@ -1,0 +1,6 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/gulp-.*
+
+# TODO: Remove these ignore rules when they pass flow checks.
+<PROJECT_ROOT>/node_modules/fbjs/lib/Deferred.js.flow
+<PROJECT_ROOT>/node_modules/fbjs/lib/shallowEqual.js.flow

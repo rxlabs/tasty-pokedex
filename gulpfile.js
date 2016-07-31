@@ -38,6 +38,7 @@ gulp.task('minify', [
 gulp.task('watch', [
   'watch:html',
   'watch:scripts',
+  'watch:flowtype',
   'watch:styles'
 ])
 
@@ -78,6 +79,15 @@ gulp.task('watch:scripts', () => {
     .pipe($.plumber())
     .pipe($.standard())
     .pipe($.standard.reporter('default'))
+})
+
+gulp.task('watch:flowtype', () => {
+  process.env.FLOW_BIN = './node_modules/.bin/flow'
+
+  return gulp.src(paths.scripts)
+    .pipe($.watch(paths.scripts))
+    .pipe($.plumber())
+    .pipe($.flowtype())
 })
 
 gulp.task('watch:styles', () => {
