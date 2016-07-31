@@ -3657,11 +3657,6 @@
       "from": "normalize-url@>=1.4.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/normalize-url/-/normalize-url-1.6.0.tgz"
     },
-    "normalize.css": {
-      "version": "4.2.0",
-      "from": "normalize.css@>=4.0.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/normalize.css/-/normalize.css-4.2.0.tgz"
-    },
     "npm-run-path": {
       "version": "1.0.0",
       "from": "npm-run-path@>=1.0.0 <2.0.0",
@@ -4470,6 +4465,11 @@
       "version": "3.1.2",
       "from": "rx-lite@>=3.1.2 <4.0.0",
       "resolved": "https://registry.npmjs.org/rx-lite/-/rx-lite-3.1.2.tgz"
+    },
+    "sanitize.css": {
+      "version": "4.1.0",
+      "from": "sanitize.css@latest",
+      "resolved": "https://registry.npmjs.org/sanitize.css/-/sanitize.css-4.1.0.tgz"
     },
     "sass-brunch": {
       "version": "2.6.3",

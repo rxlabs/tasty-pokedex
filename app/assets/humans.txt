@@ -7,4 +7,4 @@ URL: https://rxlabs.github.io/tasty-pokedex/
 Source: https://github.com/rxlabs/tasty-pokedex
 
 /* LIBRARIES */
-https://necolas.github.io/normalize.css/
+https://jonathantneal.github.io/sanitize.css/
