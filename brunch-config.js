@@ -35,7 +35,7 @@ exports.config = {
   plugins: {
     digest: {
       prependHost: {
-        production: '/tasty-brunch'
+        production: '/tasty-pokedex'
       },
       referenceFiles: /\.(css|html|js)$/
     },

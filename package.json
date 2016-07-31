@@ -1,14 +1,14 @@
 {
-  "name": "makenew-tasty-brunch",
-  "version": "1.6.0",
-  "description": "Tasty brunch app skeleton.",
+  "name": "tasty-pokedex",
+  "version": "0.0.0",
+  "description": "Pokédex using the Pokéapi.",
   "private": true,
   "keywords": [
     "brunch"
   ],
-  "homepage": "https://github.com/makenew/tasty-brunch",
-  "bugs": "https://github.com/makenew/tasty-brunch/issues",
-  "repository": "makenew/tasty-brunch",
+  "homepage": "https://github.com/rxlabs/tasty-pokedex",
+  "bugs": "https://github.com/rxlabs/tasty-pokedex/issues",
+  "repository": "rxlabs/tasty-pokedex",
   "license": "MIT",
   "author": {
     "name": "Evan Sosenko",

@@ -7,4 +7,4 @@ This change log follows the conventions of
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/makenew/tasty-brunch/compare/v0.0.0...HEAD
+[Unreleased]: https://github.com/rxlabs/tasty-pokedex/compare/v0.0.0...HEAD
