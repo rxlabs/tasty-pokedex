@@ -1,2 +1,4 @@
+import './polyfills'
+
 export default () => {
 }
