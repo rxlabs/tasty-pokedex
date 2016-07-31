@@ -12,7 +12,9 @@
 
 ## Description
 
-Pokédex using the Pokéapi.
+Pokédex using the [Pokéapi].
+
+[Pokéapi]: https://pokeapi.co/
 
 ## Quickstart
 
