@@ -19,8 +19,9 @@
     "brunch": "brunch",
     "flow": "flow",
     "gulp": "gulp",
+    "nyc": "nyc",
 
-    "test": "ava",
+    "test": "nyc ava",
       "pretest": "gulp lint && flow",
 
     "build": "brunch build --production",
@@ -33,6 +34,8 @@
 
     "deploy": "gulp deploy",
       "predeploy": "npm run dist",
+
+    "report": "nyc report --reporter=html",
 
     "start": "brunch watch --server",
     "watch": "gulp watch",
@@ -48,7 +51,10 @@
     "require": [
       "babel-register"
     ],
-    "babel": "inherit"
+    "babel": {
+      "babelrc": true,
+      "sourceMaps": "inline"
+    }
   },
   "standard": {
     "parser": "babel-eslint",
@@ -98,6 +104,7 @@
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
+    "nyc": "^7.1.0",
     "postcss-brunch": "^0.5.0",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",

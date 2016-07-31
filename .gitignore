@@ -5,6 +5,9 @@
 # For more details, visit the project page:
 # https://github.com/github/gitignore
 
+# NYC output directory
+.nyc_output
+
 # Deploy directory
 .deploy
 
