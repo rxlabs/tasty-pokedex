@@ -20,6 +20,7 @@
     "flow": "flow",
     "gulp": "gulp",
     "nyc": "nyc",
+    "standard-format": "standard-format",
 
     "test": "nyc ava",
       "pretest": "gulp lint && flow",
@@ -35,6 +36,7 @@
     "deploy": "gulp deploy",
       "predeploy": "npm run dist",
 
+    "format": "standard-format --write",
     "report": "nyc report --reporter=html",
 
     "start": "brunch watch --server",
@@ -109,6 +111,7 @@
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
     "standard": "^7.0.1",
+    "standard-format": "^2.2.2",
     "uglify-js-brunch": "^2.0.1"
   }
 }
