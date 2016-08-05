@@ -5,9 +5,9 @@ build:
     - install-packages:
         packages: libelf1 # NOTE: Required for Flow.
     - npm-install@1.1.4
-    - maxon/npm-run@0.1.2:
+    - script:
         name: dist
-        script: dist
+        code: npm run-script dist
 
 deploy:
   steps:
