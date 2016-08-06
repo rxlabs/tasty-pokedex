@@ -6356,6 +6356,11 @@
       "from": "redux@>=3.5.2 <4.0.0",
       "resolved": "https://registry.npmjs.org/redux/-/redux-3.5.2.tgz"
     },
+    "redux-logger": {
+      "version": "2.6.1",
+      "from": "redux-logger@latest",
+      "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.6.1.tgz"
+    },
     "redux-router5": {
       "version": "3.1.0",
       "from": "redux-router5@>=3.1.0 <4.0.0",

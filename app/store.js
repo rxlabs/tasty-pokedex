@@ -1,6 +1,7 @@
 /* @flow */
 
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
+import createLogger from 'redux-logger'
 
 import reducers from './reducers'
 import { messages } from './constants'
@@ -12,4 +13,15 @@ const initialState = {
   }
 }
 
-export default createStore(reducers, initialState)
+const middleware = []
+
+if (process.env.NODE_ENV === 'development') {
+  const logger = createLogger()
+  middleware.push(logger)
+}
+
+export default createStore(
+  reducers,
+  initialState,
+  applyMiddleware(...middleware)
+)
