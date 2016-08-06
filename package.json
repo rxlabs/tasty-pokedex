@@ -23,8 +23,8 @@
     "standard-format": "standard-format",
 
     "test": "nyc ava",
-      "pretest": "gulp lint && flow",
-      "posttest": "nyc report",
+      "pretest": "gulp lint",
+      "posttest": "flow",
 
     "build": "brunch build --production",
       "prebuild": "gulp clean",
