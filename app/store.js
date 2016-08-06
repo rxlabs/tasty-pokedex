@@ -1,6 +1,6 @@
 /* @flow */
 
-import { applyMiddleware, createStore } from 'redux'
+import { applyMiddleware, compose, createStore } from 'redux'
 import createLogger from 'redux-logger'
 
 import reducers from './reducers'
@@ -23,5 +23,8 @@ if (process.env.NODE_ENV === 'development') {
 export default createStore(
   reducers,
   initialState,
-  applyMiddleware(...middleware)
+  compose(
+    applyMiddleware(...middleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 )
