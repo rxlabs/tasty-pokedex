@@ -66,8 +66,7 @@
     "functions": 90,
     "branches": 90,
     "exclude": [
-      "app/index.js",
-      "app/main.js",
+      "app/*.js",
       "app/constants/**/*.js"
     ],
     "reporter": [
