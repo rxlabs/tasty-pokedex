@@ -24,6 +24,7 @@
 
     "test": "nyc ava",
       "pretest": "gulp lint && flow",
+      "posttest": "nyc report",
 
     "build": "brunch build --production",
       "prebuild": "gulp clean",
@@ -37,7 +38,7 @@
       "predeploy": "npm run dist",
 
     "format": "standard-format --write",
-    "report": "nyc report --reporter=html",
+    "report": "nyc report",
 
     "start": "brunch watch --server",
     "watch": "gulp watch",
@@ -57,6 +58,13 @@
       "babelrc": true,
       "sourceMaps": "inline"
     }
+  },
+  "nyc": {
+    "reporter": [
+      "html",
+      "lcov",
+      "text"
+    ]
   },
   "standard": {
     "parser": "babel-eslint",

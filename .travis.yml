@@ -10,5 +10,4 @@ cache:
 
 after_script:
   - npm install -g codecov
-  - npm run nyc -- report --reporter=lcov
   - codecov
