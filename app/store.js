@@ -25,6 +25,7 @@ export default createStore(
   initialState,
   compose(
     applyMiddleware(...middleware),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
+    typeof (window) !== 'undefined' && window.devToolsExtension
+      ? window.devToolsExtension() : f => f
   )
 )
