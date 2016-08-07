@@ -5,10 +5,9 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import createLogger from 'redux-logger'
 import { router5Middleware } from 'redux-router5'
 
-import reducers from './reducers'
-
 export const configureStore = ({
   initialState,
+  reducer,
   router
 }: {
   initialState: {},
@@ -24,7 +23,7 @@ export const configureStore = ({
   }
 
   return createStore(
-    reducers,
+    reducer,
     initialState,
     compose(
       applyMiddleware(...middleware),

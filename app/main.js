@@ -9,6 +9,7 @@ import { IntlProvider } from 'react-intl-redux'
 import { messages } from './constants'
 import { createRouter } from './router'
 import { configureStore } from './store'
+import { rootReducer as reducer } from './reducer'
 
 import App from './containers/App'
 
@@ -23,18 +24,26 @@ export default () => {
         locale: 'en',
         messages: messages.en
       },
-      router: {route: state}
+      router: {
+        route: state
+      }
     }
 
-    const store = configureStore({initialState, router})
+    const store = configureStore({
+      initialState,
+      reducer,
+      router
+    })
 
-    render(
+    const rootElement = document.getElementById('root')
+
+    const rootComponent =
       <Provider store={store}>
         <IntlProvider>
           <App />
         </IntlProvider>
-      </Provider>,
-      document.getElementById('root')
-    )
+      </Provider>
+
+    render(rootComponent, rootElement)
   })
 }
