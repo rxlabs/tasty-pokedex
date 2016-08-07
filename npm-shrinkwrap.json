@@ -6282,6 +6282,11 @@
       "from": "react-redux@>=4.4.5 <5.0.0",
       "resolved": "https://registry.npmjs.org/react-redux/-/react-redux-4.4.5.tgz"
     },
+    "react-router5": {
+      "version": "3.1.0",
+      "from": "react-router5@latest",
+      "resolved": "https://registry.npmjs.org/react-router5/-/react-router5-3.1.0.tgz"
+    },
     "read-all-stream": {
       "version": "3.1.0",
       "from": "read-all-stream@>=3.0.0 <4.0.0",
@@ -6556,6 +6561,16 @@
       "version": "3.0.3",
       "from": "router5@>=3.0.3 <4.0.0",
       "resolved": "https://registry.npmjs.org/router5/-/router5-3.0.3.tgz"
+    },
+    "router5-history": {
+      "version": "3.0.4",
+      "from": "router5-history@latest",
+      "resolved": "https://registry.npmjs.org/router5-history/-/router5-history-3.0.4.tgz"
+    },
+    "router5.helpers": {
+      "version": "1.1.0",
+      "from": "router5.helpers@latest",
+      "resolved": "https://registry.npmjs.org/router5.helpers/-/router5.helpers-1.1.0.tgz"
     },
     "router5.transition-path": {
       "version": "3.0.0",
