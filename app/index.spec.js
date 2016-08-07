@@ -4,6 +4,6 @@ import test from 'ava'
 
 import '.'
 
-test('imports entry point', (t) => {
+test('imports entry point', t => {
   t.pass()
 })
