@@ -18,6 +18,13 @@ export const configureStore = ({
     router5Middleware(router)
   ]
 
+  let devTools = f => f
+  if (process.env.NODE_ENV === 'development' &&
+      typeof window === 'object' &&
+      typeof window.devToolsExtension !== 'undefined') {
+    devTools = window.devToolsExtension()
+  }
+
   if (process.env.NODE_ENV === 'development') {
     const logger = createLogger()
     middleware.push(logger)
@@ -26,10 +33,6 @@ export const configureStore = ({
   return createStore(
     reducer,
     initialState,
-    compose(
-      applyMiddleware(...middleware),
-      typeof (window) !== 'undefined' && window.devToolsExtension
-        ? window.devToolsExtension() : f => f
-    )
+    compose(applyMiddleware(...middleware), devTools)
   )
 }
