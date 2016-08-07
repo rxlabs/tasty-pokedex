@@ -11,6 +11,7 @@ export const configureStore = ({
   router
 }: {
   initialState: {},
+  reducer: Function,
   router: Router5
 }) => {
   const middleware = [
