@@ -12,9 +12,9 @@ import { configureStore } from './store'
 
 import App from './containers/App'
 
-const router = createRouter()
-
 export default () => {
+  const router = createRouter()
+
   router.start((err, state) => {
     if (err) console.log(err.stack)
 
