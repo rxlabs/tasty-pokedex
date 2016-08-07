@@ -11,3 +11,9 @@ test('renders home route', t => {
   const wrapper = shallow(<Root route={route} />)
   t.is(wrapper.find('FormattedMessage').length, 1)
 })
+
+test('renders fallback route', t => {
+  const route = {name: 'doesnotexist'}
+  const wrapper = shallow(<Root route={route} />)
+  t.is(wrapper.find('FormattedMessage').length, 1)
+})
