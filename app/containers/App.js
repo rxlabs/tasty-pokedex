@@ -4,6 +4,8 @@ import React from 'react'
 
 import Root from '../routes/Root'
 
-export default () => (
+const App = () => (
   <Root />
 )
+
+export default App
