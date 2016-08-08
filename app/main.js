@@ -10,6 +10,7 @@ import { messages } from './constants'
 import { createRouter } from './router'
 import { configureStore } from './store'
 import reducer from './reducer'
+import saga from './saga'
 
 import App from './containers/App'
 
@@ -32,7 +33,8 @@ export default () => {
     const store = configureStore({
       initialState,
       reducer,
-      router
+      router,
+      saga
     })
 
     const rootElement = document.getElementById('root')

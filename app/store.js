@@ -4,17 +4,23 @@ import Router5 from 'router5'
 import { applyMiddleware, compose, createStore } from 'redux'
 import createLoggerMiddleware from 'redux-logger'
 import { router5Middleware as createRouter5Middleware } from 'redux-router5'
+import createSagaMiddleware from 'redux-saga'
 
 export const configureStore = ({
   initialState,
   reducer,
-  router
+  router,
+  saga
 }: {
   initialState: {},
   reducer: Function,
-  router: Router5
+  router: Router5,
+  saga: Function
 }) => {
   const middleware = []
+
+  const sagaMiddleware = createSagaMiddleware()
+  middleware.push(sagaMiddleware)
 
   const router5Middleware = createRouter5Middleware(router)
   middleware.push(router5Middleware)
@@ -36,6 +42,8 @@ export const configureStore = ({
     initialState,
     compose(applyMiddleware(...middleware), devTools)
   )
+
+  sagaMiddleware.run(saga)
 
   return store
 }
