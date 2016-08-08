@@ -8,3 +8,5 @@ export const rootReducer = combineReducers({
   intl: intlReducer,
   router: router5Reducer
 })
+
+export default rootReducer

@@ -9,7 +9,7 @@ import { IntlProvider } from 'react-intl-redux'
 import { messages } from './constants'
 import { createRouter } from './router'
 import { configureStore } from './store'
-import { rootReducer as reducer } from './reducer'
+import reducer from './reducer'
 
 import App from './containers/App'
 
