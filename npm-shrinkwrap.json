@@ -6561,9 +6561,9 @@
       "resolved": "https://registry.npmjs.org/rocambole-whitespace/-/rocambole-whitespace-1.0.0.tgz"
     },
     "route-node": {
-      "version": "1.4.5",
+      "version": "1.4.3",
       "from": "route-node@>=1.4.1 <1.5.0",
-      "resolved": "https://registry.npmjs.org/route-node/-/route-node-1.4.5.tgz"
+      "resolved": "https://registry.npmjs.org/route-node/-/route-node-1.4.3.tgz"
     },
     "router5": {
       "version": "3.0.3",
