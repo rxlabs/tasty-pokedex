@@ -2,8 +2,8 @@
 
 import Router5 from 'router5'
 import { applyMiddleware, compose, createStore } from 'redux'
-import createLogger from 'redux-logger'
-import { router5Middleware } from 'redux-router5'
+import createLoggerMiddleware from 'redux-logger'
+import { router5Middleware as createRouter5Middleware } from 'redux-router5'
 
 export const configureStore = ({
   initialState,
@@ -14,9 +14,15 @@ export const configureStore = ({
   reducer: Function,
   router: Router5
 }) => {
-  const middleware = [
-    router5Middleware(router)
-  ]
+  const middleware = []
+
+  const router5Middleware = createRouter5Middleware(router)
+  middleware.push(router5Middleware)
+
+  if (process.env.NODE_ENV === 'development') {
+    const loggerMiddleware = createLoggerMiddleware()
+    middleware.push(loggerMiddleware)
+  }
 
   let devTools = f => f
   if (process.env.NODE_ENV === 'development' &&
@@ -25,14 +31,11 @@ export const configureStore = ({
     devTools = window.devToolsExtension()
   }
 
-  if (process.env.NODE_ENV === 'development') {
-    const logger = createLogger()
-    middleware.push(logger)
-  }
-
-  return createStore(
+  const store = createStore(
     reducer,
     initialState,
     compose(applyMiddleware(...middleware), devTools)
   )
+
+  return store
 }
