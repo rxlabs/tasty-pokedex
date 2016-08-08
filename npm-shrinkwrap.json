@@ -1016,9 +1016,9 @@
       "resolved": "https://registry.npmjs.org/camelcase-keys/-/camelcase-keys-2.1.0.tgz"
     },
     "caniuse-db": {
-      "version": "1.0.30000518",
+      "version": "1.0.30000519",
       "from": "caniuse-db@>=1.0.30000515 <2.0.0",
-      "resolved": "https://registry.npmjs.org/caniuse-db/-/caniuse-db-1.0.30000518.tgz"
+      "resolved": "https://registry.npmjs.org/caniuse-db/-/caniuse-db-1.0.30000519.tgz"
     },
     "capture-stack-trace": {
       "version": "1.0.0",
@@ -2142,16 +2142,9 @@
       "resolved": "https://registry.npmjs.org/esformatter-remove-trailing-commas/-/esformatter-remove-trailing-commas-1.0.1.tgz"
     },
     "esformatter-semicolon-first": {
-      "version": "1.1.0",
+      "version": "1.2.0",
       "from": "esformatter-semicolon-first@>=1.1.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/esformatter-semicolon-first/-/esformatter-semicolon-first-1.1.0.tgz",
-      "dependencies": {
-        "espree": {
-          "version": "2.2.5",
-          "from": "espree@>=2.0.3 <3.0.0",
-          "resolved": "https://registry.npmjs.org/espree/-/espree-2.2.5.tgz"
-        }
-      }
+      "resolved": "https://registry.npmjs.org/esformatter-semicolon-first/-/esformatter-semicolon-first-1.2.0.tgz"
     },
     "esformatter-spaced-lined-comment": {
       "version": "2.0.1",
@@ -3738,7 +3731,7 @@
     },
     "isomorphic-fetch": {
       "version": "2.2.1",
-      "from": "isomorphic-fetch@latest",
+      "from": "isomorphic-fetch@>=2.2.1 <3.0.0",
       "resolved": "https://registry.npmjs.org/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz"
     },
     "isstream": {
@@ -3940,14 +3933,14 @@
       "resolved": "https://registry.npmjs.org/load-json-file/-/load-json-file-1.1.0.tgz"
     },
     "lodash": {
-      "version": "4.14.1",
+      "version": "4.14.2",
       "from": "lodash@>=4.2.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.14.1.tgz"
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.14.2.tgz"
     },
     "lodash-es": {
-      "version": "4.14.1",
+      "version": "4.14.2",
       "from": "lodash-es@>=4.2.1 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.14.1.tgz"
+      "resolved": "https://registry.npmjs.org/lodash-es/-/lodash-es-4.14.2.tgz"
     },
     "lodash._arraycopy": {
       "version": "3.0.0",
@@ -4339,9 +4332,9 @@
       "resolved": "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.0.tgz"
     },
     "minimatch": {
-      "version": "3.0.2",
+      "version": "3.0.3",
       "from": "minimatch@>=3.0.2 <4.0.0",
-      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.2.tgz"
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.3.tgz"
     },
     "minimist": {
       "version": "0.0.8",
@@ -6112,9 +6105,9 @@
       "resolved": "https://registry.npmjs.org/private/-/private-0.1.6.tgz"
     },
     "process": {
-      "version": "0.11.7",
+      "version": "0.11.8",
       "from": "process@>=0.11.2 <0.12.0",
-      "resolved": "https://registry.npmjs.org/process/-/process-0.11.7.tgz"
+      "resolved": "https://registry.npmjs.org/process/-/process-0.11.8.tgz"
     },
     "process-nextick-args": {
       "version": "1.0.7",
@@ -6284,7 +6277,7 @@
     },
     "react-router5": {
       "version": "3.1.0",
-      "from": "react-router5@latest",
+      "from": "react-router5@>=3.1.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/react-router5/-/react-router5-3.1.0.tgz"
     },
     "read-all-stream": {
@@ -6368,12 +6361,12 @@
     },
     "redux-actions": {
       "version": "0.10.1",
-      "from": "redux-actions@latest",
+      "from": "redux-actions@>=0.10.1 <0.11.0",
       "resolved": "https://registry.npmjs.org/redux-actions/-/redux-actions-0.10.1.tgz"
     },
     "redux-logger": {
       "version": "2.6.1",
-      "from": "redux-logger@latest",
+      "from": "redux-logger@>=2.6.1 <3.0.0",
       "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.6.1.tgz"
     },
     "redux-router5": {
@@ -6383,7 +6376,7 @@
     },
     "redux-saga": {
       "version": "0.11.0",
-      "from": "redux-saga@latest",
+      "from": "redux-saga@>=0.11.0 <0.12.0",
       "resolved": "https://registry.npmjs.org/redux-saga/-/redux-saga-0.11.0.tgz"
     },
     "regenerate": {
@@ -6568,9 +6561,9 @@
       "resolved": "https://registry.npmjs.org/rocambole-whitespace/-/rocambole-whitespace-1.0.0.tgz"
     },
     "route-node": {
-      "version": "1.4.3",
+      "version": "1.4.5",
       "from": "route-node@>=1.4.1 <1.5.0",
-      "resolved": "https://registry.npmjs.org/route-node/-/route-node-1.4.3.tgz"
+      "resolved": "https://registry.npmjs.org/route-node/-/route-node-1.4.5.tgz"
     },
     "router5": {
       "version": "3.0.3",
@@ -6579,12 +6572,12 @@
     },
     "router5-history": {
       "version": "3.0.4",
-      "from": "router5-history@latest",
+      "from": "router5-history@>=3.0.4 <4.0.0",
       "resolved": "https://registry.npmjs.org/router5-history/-/router5-history-3.0.4.tgz"
     },
     "router5.helpers": {
       "version": "1.1.0",
-      "from": "router5.helpers@latest",
+      "from": "router5.helpers@>=1.1.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/router5.helpers/-/router5.helpers-1.1.0.tgz"
     },
     "router5.transition-path": {
@@ -6954,9 +6947,9 @@
       }
     },
     "standard-engine": {
-      "version": "4.1.2",
+      "version": "4.1.3",
       "from": "standard-engine@>=4.0.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/standard-engine/-/standard-engine-4.1.2.tgz",
+      "resolved": "https://registry.npmjs.org/standard-engine/-/standard-engine-4.1.3.tgz",
       "dependencies": {
         "get-stdin": {
           "version": "5.0.1",
