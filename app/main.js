@@ -14,7 +14,9 @@ import saga from './saga'
 
 import App from './containers/App'
 
-export default () => {
+export default (
+  injectedState: Object = {} // eslint-disable-line space-infix-ops
+) => {
   const router = createRouter()
 
   router.start((err, state) => {
@@ -27,7 +29,8 @@ export default () => {
       },
       router: {
         route: state
-      }
+      },
+      ...injectedState
     }
 
     const store = configureStore({
