@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { IntlProvider } from 'react-intl-redux'
 
 import { messages } from './constants'
+import { routerInit } from './modules/router'
 import { createRouter } from './router'
 import { configureStore } from './store'
 import reducer from './reducer'
@@ -39,6 +40,8 @@ export default (
       router,
       saga
     })
+
+    store.dispatch(routerInit({route: state}))
 
     const rootElement = document.getElementById('root')
 
