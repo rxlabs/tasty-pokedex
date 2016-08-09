@@ -52,7 +52,9 @@
       "app/**/*.spec.js"
     ],
     "require": [
-      "babel-register"
+      "babel-register",
+      "babel-polyfill",
+      "isomorphic-fetch"
     ],
     "babel": {
       "babelrc": true,
