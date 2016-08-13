@@ -18,6 +18,7 @@ export default ({
   render,
   rootElement,
   resolve,
+  injectedRoute,
   blockRender = false,
   injectedState = {}
 }: {
@@ -33,7 +34,7 @@ export default ({
 
   const router = createRouter()
 
-  router.start((err, state) => {
+  router.start(injectedRoute, (err, state) => {
     if (err) console.log(err.stack)
 
     const initialState = {
