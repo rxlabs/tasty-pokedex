@@ -2,23 +2,49 @@
 
 import { createAction } from 'redux-actions'
 import { actionTypes as actions } from 'redux-router5'
-import { takeEvery } from 'redux-saga'
-import { fork } from 'redux-saga/effects'
+import { delay, takeEvery } from 'redux-saga'
+import { call, fork, race, put, take } from 'redux-saga/effects'
 
-const INIT = 'router/init'
+import routes from '../routes'
+import { setReady } from './status'
 
-export const routerInit = createAction(INIT)
+const loadTimeout = 5000
 
-function * fetchData (action) {
-  switch (action.payload.route.name) {
-    case 'home':
-      yield
+const prefix = 'tasty-pokedex/router'
+const INITIALIZE = `${prefix}/initialize`
+
+export { router5Reducer as default } from 'redux-router5'
+export const initializeRoute = createAction(INITIALIZE)
+
+export function * loadData (action: {
+  type: string, payload: any
+}): Generator<*, *, *> {
+  const name = action.payload.route.name
+  const params = action.payload.route.params
+  const route = routes.find(r => r.name === name)
+
+  if (typeof route !== 'undefined') {
+    if ('puts' in route) {
+      yield route.puts.map(action => put(action(params)))
+    }
+
+    if ('takes' in route) {
+      yield race({
+        loaded: route.takes.map(a => take(a)),
+        timeout: call(delay, loadTimeout)
+      })
+    }
+  }
+
+  if (action.type === INITIALIZE) {
+    yield put(setReady(true))
+    action.payload.unsubscribe()
   }
 }
 
-export function * saga () {
-  yield fork(takeEvery, INIT, fetchData)
-  yield fork(takeEvery, actions.TRANSITION_SUCCESS, fetchData)
+export function * saga (): Generator<*, *, *> {
+  yield fork(takeEvery, [
+    INITIALIZE,
+    actions.TRANSITION_SUCCESS
+  ], loadData)
 }
-
-export { router5Reducer as default } from 'redux-router5'

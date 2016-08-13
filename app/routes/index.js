@@ -1,5 +1,8 @@
 /* @flow */
 
 export default [
-  {name: 'home', path: '/'}
+  {
+    name: 'home',
+    path: '/'
+  }
 ]

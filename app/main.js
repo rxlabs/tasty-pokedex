@@ -1,13 +1,12 @@
 /* @flow */
 
 import React from 'react'
-import { render } from 'react-dom'
 
 import { Provider } from 'react-redux'
 import { IntlProvider } from 'react-intl-redux'
 
 import { messages } from './constants'
-import { routerInit } from './modules/router'
+import { initializeRoute } from './modules/router'
 import { createRouter } from './router'
 import { configureStore } from './store'
 import reducer from './reducer'
@@ -15,9 +14,23 @@ import saga from './saga'
 
 import App from './containers/App'
 
-export default (
-  injectedState: Object = {} // eslint-disable-line space-infix-ops
-) => {
+export default ({
+  render,
+  rootElement,
+  resolve,
+  blockRender = false,
+  injectedState = {}
+}: {
+  render: Function,
+  rootElement?: Object,
+  resolve?: Function,
+  blockRender?: boolean,
+  injectedState?: Object
+}) => {
+  if (typeof rootElement !== 'undefined' && typeof resolve !== 'undefined') {
+    throw Error('Cannot set both rootElement and resolve')
+  }
+
   const router = createRouter()
 
   router.start((err, state) => {
@@ -41,10 +54,6 @@ export default (
       saga
     })
 
-    store.dispatch(routerInit({route: state}))
-
-    const rootElement = document.getElementById('root')
-
     const rootComponent =
       <Provider store={store}>
         <IntlProvider>
@@ -52,6 +61,26 @@ export default (
         </IntlProvider>
       </Provider>
 
-    render(rootComponent, rootElement)
+    const renderRoot = () => {
+      if (!blockRender || store.getState().status.ready) {
+        if (typeof rootElement !== 'undefined') {
+          return render(rootComponent, rootElement)
+        }
+
+        if (typeof resolve !== 'undefined') {
+          return resolve(render(rootComponent))
+        }
+      }
+    }
+
+    const unsubscribe = store.subscribe(renderRoot)
+    store.dispatch(initializeRoute({
+      route: state,
+      unsubscribe
+    }))
   })
+
+  return {
+    router
+  }
 }
