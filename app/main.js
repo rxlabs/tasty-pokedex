@@ -20,12 +20,14 @@ export default ({
   resolve,
   injectedRoute,
   blockRender = false,
+  timeout = 150,
   injectedState = {}
 }: {
   render: Function,
   rootElement?: Object,
   resolve?: Function,
   blockRender?: boolean,
+  timeout?: number,
   injectedState?: Object
 }) => {
   if (typeof rootElement !== 'undefined' && typeof resolve !== 'undefined') {
@@ -77,6 +79,7 @@ export default ({
     const unsubscribe = store.subscribe(renderRoot)
     store.dispatch(initializeRoute({
       route: state,
+      timeout,
       unsubscribe
     }))
   })

@@ -8,8 +8,6 @@ import { call, fork, race, put, take } from 'redux-saga/effects'
 import routes from '../routes'
 import { setReady } from './status'
 
-const loadTimeout = 5000
-
 const prefix = 'tasty-pokedex/router'
 const INITIALIZE = `${prefix}/initialize`
 
@@ -23,6 +21,10 @@ export function * loadData (action: {
   const params = action.payload.route.params
   const route = routes.find(r => r.name === name)
 
+  const timeout = typeof action.payload.timeout === 'undefined'
+    ? 150
+    : action.payload.timeout
+
   if (typeof route !== 'undefined') {
     if ('puts' in route) {
       yield route.puts.map(action => put(action(params)))
@@ -31,7 +33,7 @@ export function * loadData (action: {
     if ('takes' in route) {
       yield race({
         loaded: route.takes.map(a => take(a)),
-        timeout: call(delay, loadTimeout)
+        timeout: call(delay, timeout)
       })
     }
   }
