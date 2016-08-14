@@ -44,7 +44,7 @@ exports.config = {
   },
 
   plugins: {
-    babel: JSON.parse(require('fs').readFileSync('.babelrc')),
+    babel: require('./package.json').babel,
 
     digest: {
       prependHost: {

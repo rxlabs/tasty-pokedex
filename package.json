@@ -48,6 +48,24 @@
   "files": [
     "public"
   ],
+  "babel": {
+    "presets": [
+      "stage-1",
+      "react"
+    ],
+    "env": {
+      "development": {
+        "presets": [
+          "es2015"
+        ]
+      },
+      "production": {
+        "presets": [
+          "es2015"
+        ]
+      }
+    }
+  },
   "ava": {
     "files": [
       "app/**/*.spec.js"
