@@ -41,6 +41,7 @@
     "report": "nyc report",
 
     "start": "brunch watch --server",
+    "server": "babel-node ./server",
     "watch": "gulp watch",
     "watch:test": "ava --watch"
   },
@@ -90,6 +91,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
+    "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",

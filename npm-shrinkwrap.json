@@ -2319,7 +2319,7 @@
     },
     "express": {
       "version": "4.14.0",
-      "from": "express@>=4.0.0 <5.0.0",
+      "from": "express@latest",
       "resolved": "https://registry.npmjs.org/express/-/express-4.14.0.tgz"
     },
     "extend": {
