@@ -25,6 +25,10 @@ paths = Object.assign(paths, {
   styles: `${paths.src}/**/*.scss`
 })
 
+const builds = {
+  client: `${paths.build}/client`
+}
+
 gulp.task('default', [
   'lint',
   'watch'
@@ -47,44 +51,49 @@ gulp.task('watch', [
   'watch:styles'
 ])
 
-gulp.task('clean', () => (del([paths.dist, paths.build])))
+gulp.task('clean', () => (
+  del([
+    paths.build,
+    paths.dist
+  ])
+))
 
-gulp.task('htmlhint', () => {
-  return gulp.src(paths.html)
+gulp.task('htmlhint', () => (
+  gulp.src(paths.html)
     .pipe($.htmlhint())
     .pipe($.htmlhint.failReporter())
-})
+))
 
-gulp.task('standard', () => {
-  return gulp.src(paths.scripts)
+gulp.task('standard', () => (
+  gulp.src(paths.scripts)
     .pipe($.standard())
     .pipe($.standard.reporter('default', {
       breakOnError: true
     }))
-})
+))
 
-gulp.task('sass-lint', () => {
-  return gulp.src(paths.styles)
+gulp.task('sass-lint', () => (
+  gulp.src(paths.styles)
     .pipe($.sassLint())
     .pipe($.sassLint.format())
     .pipe($.sassLint.failOnError())
-})
+))
 
-gulp.task('watch:html', () => {
-  return gulp.src(paths.html)
+gulp.task('watch:html', () => (
+  gulp.src(paths.html)
     .pipe($.watch(paths.html))
     .pipe($.plumber())
     .pipe($.htmlhint())
     .pipe($.htmlhint.reporter())
-})
+))
 
-gulp.task('watch:scripts', () => {
-  return gulp.src(paths.scripts)
+gulp.task('watch:scripts', () => (
+  gulp.src(paths.scripts)
     .pipe($.watch(paths.scripts))
     .pipe($.plumber())
     .pipe($.standard())
     .pipe($.standard.reporter('default'))
-})
+))
 
 gulp.task('watch:flow', () => {
   process.env.FLOW_BIN = './node_modules/.bin/flow'
@@ -95,22 +104,22 @@ gulp.task('watch:flow', () => {
     .pipe($.flowtype())
 })
 
-gulp.task('watch:styles', () => {
-  return gulp.src(paths.styles)
+gulp.task('watch:styles', () => (
+  gulp.src(paths.styles)
     .pipe($.watch(paths.styles))
     .pipe($.plumber())
     .pipe($.sassLint())
     .pipe($.sassLint.format())
-})
+))
 
-gulp.task('imagemin', () => {
-  return gulp.src(paths.images)
+gulp.task('imagemin', () => (
+  gulp.src(paths.images)
     .pipe($.imagemin())
     .pipe(gulp.dest(paths.dist))
-})
+))
 
-gulp.task('htmlmin', () => {
-  return gulp.src(paths.html)
+gulp.task('htmlmin', () => (
+  gulp.src(paths.html)
     .pipe($.htmlmin({
       collapseBooleanAttributes: true,
       collapseWhitespace: true,
@@ -122,12 +131,33 @@ gulp.task('htmlmin', () => {
       minifyJS: true
     }))
     .pipe(gulp.dest(paths.dist))
+))
+
+gulp.task('rev', () => {
+  const dontRev = [
+    '404.html',
+    'index.html',
+    'humans.txt',
+    'robots.txt',
+    'crossdomain.xml',
+    'image.png'
+  ]
+
+  const revAll = new $.revAll({ // eslint-disable-line new-cap
+    prefix: '/tasty-brunch',
+    dontRenameFile: dontRev,
+    dontUpdateReference: dontRev
+  })
+
+  return gulp.src(`${paths.dist}/**`)
+    .pipe(revAll.revision())
+    .pipe(gulp.dest(builds.client))
 })
 
-gulp.task('deploy', (done) => {
-  fs.openSync(path.join(paths.dist, '.nojekyll'), 'w')
+gulp.task('deploy', ['rev'], (done) => {
+  fs.openSync(path.join(builds.client, '.nojekyll'), 'w')
 
-  return ghpages.publish(paths.dist, {
+  return ghpages.publish(builds.client, {
     clone: '.deploy',
     depth: 2,
     dotfiles: true,
@@ -135,7 +165,8 @@ gulp.task('deploy', (done) => {
     repo: process.env.DEPLOY_REPO || `git@github.com:${pkg.repository}.git`,
     branch: process.env.DEPLOY_BRANCH || 'gh-pages',
     logger: (message) => {
-      console.log(`[ deploy ] ${message}`)},
+      console.log(`[ deploy ] ${message}`)
+    },
     user: {
       name: process.env.DEPLOY_NAME || pkg.author.name,
       email: process.env.DEPLOY_EMAIL || pkg.author.email
