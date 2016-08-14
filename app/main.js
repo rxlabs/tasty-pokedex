@@ -26,6 +26,7 @@ export default ({
   render: Function,
   rootElement?: Object,
   resolve?: Function,
+  injectedRoute?: string,
   blockRender?: boolean,
   timeout?: number,
   injectedState?: Object

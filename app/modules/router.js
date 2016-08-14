@@ -26,11 +26,11 @@ export function * loadData (action: {
     : action.payload.timeout
 
   if (typeof route !== 'undefined') {
-    if ('puts' in route) {
+    if (typeof route.puts !== 'undefined') {
       yield route.puts.map(action => put(action(params)))
     }
 
-    if ('takes' in route) {
+    if (typeof route.takes !== 'undefined') {
       yield race({
         loaded: route.takes.map(a => take(a)),
         timeout: call(delay, timeout)

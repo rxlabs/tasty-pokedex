@@ -6,7 +6,7 @@ import { renderToString as render } from 'react-dom/server'
 
 import main from '../app/main'
 
-export default (route: string, state = {}) => {
+export default (route: string, state: Object = {}) => { // eslint-disable-line
   return new Promise((resolve) => {
     const { router } = main({
       render,
@@ -15,5 +15,6 @@ export default (route: string, state = {}) => {
       injectedState: state,
       blockRender: true
     })
+    router.stop()
   })
 }
