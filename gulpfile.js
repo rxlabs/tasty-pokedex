@@ -14,7 +14,8 @@ const pkg = require('./package.json')
 let paths = {
   src: 'app',
   dist: 'public',
-  server: 'server'
+  server: 'server',
+  build: 'build'
 }
 
 paths = Object.assign(paths, {
@@ -46,7 +47,7 @@ gulp.task('watch', [
   'watch:styles'
 ])
 
-gulp.task('clean', () => (del(paths.dist)))
+gulp.task('clean', () => (del([paths.dist, paths.build])))
 
 gulp.task('htmlhint', () => {
   return gulp.src(paths.html)
