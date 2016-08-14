@@ -11,12 +11,16 @@ const $ = require('gulp-load-plugins')()
 
 const pkg = require('./package.json')
 
-let paths = {src: 'app', dist: 'public'}
+let paths = {
+  src: 'app',
+  dist: 'public',
+  server: 'server'
+}
 
 paths = Object.assign(paths, {
   html: `${paths.dist}/**/*.html`,
   images: `${paths.dist}/**/*.{gif,jpg,png}`,
-  scripts: `${paths.src}/**/*.js`,
+  scripts: `(${paths.src}|${paths.server})/**/*.js`,
   styles: `${paths.src}/**/*.scss`
 })
 
