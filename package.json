@@ -55,6 +55,7 @@
   },
   "main": "./index.js",
   "files": [
+    "npm-shrinkwrap.json",
     "index.js",
     "dist"
   ],
