@@ -23,6 +23,15 @@ export const injectIntoTemplate = ({
   const subElement = jsdom(html).body.firstChild
   const rootElement = document.getElementById(id)
   document.body.replaceChild(subElement, rootElement)
+
+  if (typeof state !== 'undefined') {
+    const scriptElement = document.getElementsByTagName('script')[0]
+    const stateElement = document.createElement('script')
+    stateElement.id = '__PRELOADED_STATE__'
+    stateElement.text = `window.__PRELOADED_STATE__ = ${JSON.stringify(state)}`
+    scriptElement.parentElement.insertBefore(stateElement, scriptElement)
+  }
+
   return document.documentElement.outerHTML
 }
 
