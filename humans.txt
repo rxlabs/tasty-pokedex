@@ -3,7 +3,6 @@ Author: Evan Sosenko
 Email: razorx@evansosenko.com
 
 /* SITE */
-URL: https://rxlabs.github.io/tasty-pokedex/
 Source: https://github.com/rxlabs/tasty-pokedex
 
 /* LIBRARIES */
