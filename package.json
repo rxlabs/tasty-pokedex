@@ -125,6 +125,9 @@
       "Generator"
     ]
   },
+  "engines": {
+    "node": "6.3.1"
+  },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
     "express": "^4.14.0",
