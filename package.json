@@ -45,6 +45,8 @@
     "deploy": "gulp deploy",
       "predeploy": "npm run dist",
 
+    "heroku-postbuild": "npm run dist",
+
     "format": "standard-format --write",
     "report": "nyc report",
 
