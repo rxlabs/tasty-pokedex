@@ -15,77 +15,65 @@ import saga from './saga'
 import App from './containers/App'
 
 export default ({
-  render,
-  rootElement,
-  resolve,
-  injectedRoute,
-  blockRender = false,
+  currentRoute,
+  state = {},
   timeout = 150,
-  injectedState = {}
+  blockRender = false
 }: {
-  render: Function,
-  rootElement?: Object,
-  resolve?: Function,
-  injectedRoute?: string,
-  blockRender?: boolean,
+  currentRoute?: string,
+  state?: Object,
   timeout?: number,
-  injectedState?: Object
-}) => {
-  if (typeof rootElement !== 'undefined' && typeof resolve !== 'undefined') {
-    throw Error('Cannot set both rootElement and resolve')
-  }
+  blockRender?: boolean
+}) => (
+  new Promise((resolve, reject) => {
+    const router = createRouter()
 
-  const router = createRouter()
+    router.start(currentRoute, (err, route) => {
+      if (err) reject(err)
 
-  router.start(injectedRoute, (err, state) => {
-    if (err) console.log(err.stack)
+      const initialState = {
+        intl: {
+          locale: 'en',
+          messages: messages.en
+        },
+        router: {
+          route
+        },
+        ...state
+      }
 
-    const initialState = {
-      intl: {
-        locale: 'en',
-        messages: messages.en
-      },
-      router: {
-        route: state
-      },
-      ...injectedState
-    }
+      const store = configureStore({
+        initialState,
+        reducer,
+        router,
+        saga
+      })
 
-    const store = configureStore({
-      initialState,
-      reducer,
-      router,
-      saga
-    })
+      const rootComponent =
+        <Provider store={store}>
+          <IntlProvider>
+            <App />
+          </IntlProvider>
+        </Provider>
 
-    const rootComponent =
-      <Provider store={store}>
-        <IntlProvider>
-          <App />
-        </IntlProvider>
-      </Provider>
-
-    const renderRoot = () => {
-      if (!blockRender || store.getState().status.ready) {
-        if (typeof rootElement !== 'undefined') {
-          return render(rootComponent, rootElement)
-        }
-
-        if (typeof resolve !== 'undefined') {
-          return resolve(render(rootComponent))
+      const resolveRoot = () => {
+        if (!blockRender || store.getState().status.ready) {
+          resolve({
+            router,
+            store,
+            rootComponent
+          })
         }
       }
-    }
 
-    const unsubscribe = store.subscribe(renderRoot)
-    store.dispatch(initializeRoute({
-      route: state,
-      timeout,
-      unsubscribe
-    }))
+      if (route) {
+        const unsubscribe = store.subscribe(resolveRoot)
+        store.dispatch(initializeRoute({
+          route,
+          timeout,
+          unsubscribe
+        }))
+      }
+    })
   })
-
-  return {
-    router
-  }
-}
+)
