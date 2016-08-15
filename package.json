@@ -22,17 +22,18 @@
     "nyc": "nyc",
     "standard-format": "standard-format",
 
+    "start": "node ./dist/server",
+
     "test": "nyc ava",
       "pretest": "gulp lint",
       "posttest": "flow",
 
     "build": "concurrently 'npm run build:client' 'npm run build:server' 'npm run build:app'",
     "build:client": "brunch build --production",
-    "build:server": "BABEL_ENV=node babel --out-dir ./build/server ./server",
-    "build:app": "BABEL_ENV=node babel --out-dir ./build/app ./app",
+    "build:server": "BABEL_ENV=node babel --out-dir ./dist/server ./server",
+    "build:app": "BABEL_ENV=node babel --out-dir ./dist/app ./app",
       "prebuild": "gulp clean",
       "postbuild": "gulp htmlhint",
-
 
     "dist": "npm run build",
       "predist": "npm test",
@@ -44,15 +45,14 @@
     "format": "standard-format --write",
     "report": "nyc report",
 
-    "start": "brunch watch --server",
+    "client": "brunch watch --server",
     "server": "babel-node ./server",
     "watch": "gulp watch",
     "watch:test": "ava --watch"
   },
-  "main": "./build/server/main.js",
+  "main": "./dist/server/main.js",
   "files": [
-    "build",
-    "public"
+    "dist"
   ],
   "babel": {
     "presets": [
