@@ -2,4 +2,8 @@
 
 import main from './main'
 
-main({})
+main({
+  assets: process.env.NODE_ENV === 'production'
+    ? './build/client'
+    : './public'
+})
