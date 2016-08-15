@@ -11,7 +11,7 @@ export default ({
   port = 3000,
   assets = path.join(__dirname, '..', 'client')
 }: {
-  assets: string,
+  assets?: string,
   port?: number
 }) => {
   const app = express()
