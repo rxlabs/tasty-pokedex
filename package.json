@@ -39,6 +39,9 @@
       "predist": "npm test",
       "postdist": "gulp rev",
 
+    "package": "npm pack",
+      "prepackage": "npm run dist",
+
     "deploy": "gulp deploy",
       "predeploy": "npm run dist",
 
@@ -50,8 +53,9 @@
     "watch": "gulp watch",
     "watch:test": "ava --watch"
   },
-  "main": "./dist/server/main.js",
+  "main": "./index.js",
   "files": [
+    "index.js",
     "dist"
   ],
   "babel": {

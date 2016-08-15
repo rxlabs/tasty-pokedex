@@ -15,6 +15,9 @@
 dist
 public
 
+# Package
+*.tgz
+
 # Logs
 logs
 *.log
