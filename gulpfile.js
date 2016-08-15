@@ -144,7 +144,9 @@ gulp.task('rev', ['minify'], () => {
   ]
 
   const revAll = new $.revAll({ // eslint-disable-line new-cap
-    prefix: process.env.ASSET_PREFIX || '/tasty-pokedex',
+    prefix: typeof process.env.ASSET_PREFIX === 'string'
+      ? process.env.ASSET_PREFIX
+      : '/tasty-pokedex',
     dontRenameFile: dontRev,
     dontUpdateReference: dontRev
   })

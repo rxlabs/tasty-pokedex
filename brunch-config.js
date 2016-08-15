@@ -66,7 +66,9 @@ exports.config = {
             helpers: {
               urlprefix () {
                 const url = process.env.DOMAIN || 'rxlabs.github.io'
-                const baseurl = process.env.BASEURL || '/tasty-pokedex'
+                const baseurl = typeof process.env.BASEURL === 'string'
+                  ? process.env.BASEURL
+                  : '/tasty-pokedex'
                 return `https://${url}${baseurl}`
               },
               join (context, block) {
