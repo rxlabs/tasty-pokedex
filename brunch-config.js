@@ -64,6 +64,11 @@ exports.config = {
           handlebars: {
             enableProcessor: true,
             helpers: {
+              urlprefix () {
+                const url = process.env.DOMAIN || 'rxlabs.github.io'
+                const baseurl = process.env.BASEURL || '/tasty-pokedex'
+                return `https://${url}${baseurl}`
+              },
               join (context, block) {
                 return context.join(block.hash.delimiter)
               },
