@@ -108,6 +108,7 @@
     "functions": 90,
     "branches": 90,
     "exclude": [
+      "node_modules",
       "app/*.js",
       "app/**/index.js",
       "app/constants/**/*.js"
@@ -189,7 +190,7 @@
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
-    "nyc": "^7.1.0",
+    "nyc": "^8.1.0",
     "postcss-brunch": "^0.6.0",
     "react-addons-test-utils": "^15.3.0",
     "sass-brunch": "^2.0.0",
