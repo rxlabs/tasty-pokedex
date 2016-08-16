@@ -68,6 +68,9 @@
     ],
     "env": {
       "node": {
+        "ignore": [
+          "**/*.spec.js"
+        ],
         "presets": [
           "node6"
         ]
