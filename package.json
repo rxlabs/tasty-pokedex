@@ -51,7 +51,7 @@
     "report": "nyc report",
 
     "client": "brunch watch --server",
-    "server": "babel-node ./server",
+    "server": "babel-watch ./server",
     "watch": "gulp watch",
     "watch:test": "ava --watch"
   },
@@ -163,6 +163,7 @@
     "babel-preset-node6": "^11.0.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-1": "^6.5.0",
+    "babel-watch": "^2.0.2",
     "brunch": "^2.5.2",
     "brunch-static": "^1.1.1",
     "concurrently": "^2.2.0",
