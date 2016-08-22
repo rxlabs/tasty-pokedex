@@ -13,6 +13,8 @@ export default async () => {
     const stateElement = document.getElementById('__PRELOADED_STATE__')
 
     const { rootComponent } = await main({
+      useHash: process.env.NODE_ENV === 'production' &&
+               preloadedState === undefined,
       state: preloadedState || {}
     })
 

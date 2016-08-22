@@ -17,16 +17,18 @@ import App from './containers/App'
 export default ({
   currentRoute,
   state = {},
+  useHash = false,
   timeout = 150,
   blockRender = false
 }: {
   currentRoute?: string,
   state?: Object,
+  useHash?: boolean,
   timeout?: number,
   blockRender?: boolean
 }) => (
   new Promise((resolve, reject) => {
-    const router = createRouter()
+    const router = createRouter({ useHash })
 
     router.start(currentRoute, (err, route) => {
       if (err) reject(err)

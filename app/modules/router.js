@@ -21,7 +21,7 @@ export function * loadData (action: {
   const params = action.payload.route.params
   const route = routes.find(r => r.name === name)
 
-  const timeout = typeof action.payload.timeout === 'undefined'
+  const timeout = action.payload.timeout === undefined
     ? 150
     : action.payload.timeout
 

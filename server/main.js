@@ -20,7 +20,7 @@ export default ({
     index: false
   }))
 
-  app.get('/', async (req, res) => {
+  app.get('/*', async (req, res) => {
     try {
       const { html, state } = await render(req.originalUrl)
       const template = await fs.readFile(path.join(assets, 'index.html'))
