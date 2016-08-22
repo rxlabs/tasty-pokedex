@@ -1,9 +1,8 @@
 /* @flow */
 
-import { jsdom } from 'jsdom'
-
 import '../app/polyfills'
 
+import cheerio from 'cheerio'
 import { renderToString } from 'react-dom/server'
 
 import main from '../app/main'
@@ -19,20 +18,18 @@ export const injectIntoTemplate = ({
   state?: Object,
   id?: string
 }) => {
-  const document = jsdom(template)
-  const subElement = jsdom(html).body.firstChild
-  const rootElement = document.getElementById(id)
-  document.body.replaceChild(subElement, rootElement)
+  const $ = cheerio.load(template)
+
+  $(`#${id}`).replaceWith(html)
 
   if (typeof state !== 'undefined') {
-    const scriptElement = document.getElementsByTagName('script')[0]
-    const stateElement = document.createElement('script')
-    stateElement.id = '__PRELOADED_STATE__'
-    stateElement.text = `window.__PRELOADED_STATE__ = ${JSON.stringify(state)}`
-    scriptElement.parentElement.insertBefore(stateElement, scriptElement)
+    const script = `window.__PRELOADED_STATE__ = ${JSON.stringify(state)}`
+    $('script').before(
+      `<script id="__PRELOADED_STATE__" defer>${script}</script>`
+    )
   }
 
-  return document.documentElement.outerHTML
+  return $.html()
 }
 
 export default async function (route: string, state: Object = {}) { // eslint-disable-line
