@@ -20,11 +20,11 @@ export const injectIntoTemplate = ({
 }) => {
   const $ = cheerio.load(template)
 
-  $(`#${id}`).replaceWith(html)
+  $(`#${id}`).append(html)
 
   if (typeof state !== 'undefined') {
     const script = `window.__PRELOADED_STATE__ = ${JSON.stringify(state)}`
-    $('script').before(
+    $('script').first().before(
       `<script id="__PRELOADED_STATE__" defer>${script}</script>`
     )
   }
