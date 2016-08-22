@@ -6587,9 +6587,9 @@
       "resolved": "https://registry.npmjs.org/redux/-/redux-3.5.2.tgz"
     },
     "redux-actions": {
-      "version": "0.10.1",
-      "from": "redux-actions@>=0.10.1 <0.11.0",
-      "resolved": "https://registry.npmjs.org/redux-actions/-/redux-actions-0.10.1.tgz"
+      "version": "0.11.0",
+      "from": "redux-actions@0.11.0",
+      "resolved": "https://registry.npmjs.org/redux-actions/-/redux-actions-0.11.0.tgz"
     },
     "redux-logger": {
       "version": "2.6.1",
