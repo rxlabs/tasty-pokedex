@@ -1,16 +1,23 @@
 /* @flow */
 
-import Router5 from 'router5'
-import historyPlugin from 'router5-history'
+import createRouter from 'router5'
+import browserPlugin from 'router5/plugins/browser'
 
 import routes from './routes'
 
-export const createRouter = ({
+export const configureRouter = ({
+  defaultRoute = 'home',
   useHash = false
 }: {
+  defaultRoute: string,
   useHash?: boolean
-}) => {
-  return new Router5(routes)
-    .setOption('useHash', useHash)
-    .usePlugin(historyPlugin())
-}
+}) => (
+  createRouter(routes, {
+    defaultRoute
+  })
+    .usePlugin(browserPlugin({
+      useHash
+    }))
+)
+
+export default configureRouter

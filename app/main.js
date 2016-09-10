@@ -7,7 +7,7 @@ import { IntlProvider } from 'react-intl-redux'
 
 import { messages } from './constants'
 import { initializeRoute } from './modules/router'
-import { createRouter } from './router'
+import { configureRouter } from './router'
 import { configureStore } from './store'
 import reducer from './reducer'
 import saga from './saga'
@@ -28,7 +28,7 @@ export default ({
   blockRender?: boolean
 }) => (
   new Promise((resolve, reject) => {
-    const router = createRouter({ useHash })
+    const router = configureRouter({ useHash })
 
     router.start(currentRoute, (err, route) => {
       if (err) reject(err)
