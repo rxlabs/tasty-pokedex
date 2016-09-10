@@ -28,6 +28,10 @@ export default async () => {
 
     delete window.__PRELOADED_STATE__
   } catch (err) {
-    console.log(err)
+    if (process.env.NODE_ENV === 'production') {
+      console.log(err)
+    } else {
+      throw err
+    }
   }
 }
