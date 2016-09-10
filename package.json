@@ -20,7 +20,6 @@
     "flow": "flow",
     "gulp": "gulp",
     "nyc": "nyc",
-    "standard-format": "standard-format",
 
     "start": "node ./dist/server",
 
