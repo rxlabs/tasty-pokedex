@@ -8,7 +8,8 @@ exports.config = {
   conventions: {
     ignored: [
       /[\\/]_/,
-      /\.spec\.js$/
+      /\.spec\.js$/,
+      /\.test\.js$/
     ]
   },
 

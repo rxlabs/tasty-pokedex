@@ -15,6 +15,7 @@ const pkg = require('./package.json')
 let paths = {
   src: 'app',
   server: 'server',
+  test: 'test',
   build: 'public',
   dist: 'dist'
 }
@@ -22,7 +23,7 @@ let paths = {
 paths = Object.assign(paths, {
   html: `${paths.build}/**/*.html`,
   images: `${paths.build}/**/*.{gif,jpg,png}`,
-  scripts: `{${paths.src},${paths.server}}/**/*.js`,
+  scripts: `{${paths.src},${paths.server},${paths.test}}/**/*.js`,
   styles: `${paths.src}/**/*.scss`
 })
 

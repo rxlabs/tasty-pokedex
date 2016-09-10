@@ -19,6 +19,7 @@
     "brunch": "brunch",
     "flow": "flow",
     "gulp": "gulp",
+    "karma": "karma",
     "nyc": "nyc",
 
     "start": "node ./dist/server",
@@ -48,11 +49,13 @@
 
     "format": "standard --fix",
     "report": "nyc report",
+    "integration": "karma start --single-run",
 
     "client": "brunch watch --server",
     "server": "babel-watch ./server",
     "watch": "gulp watch",
-    "watch:test": "ava --watch"
+    "watch:test": "ava --watch",
+    "watch:integration": "karma start"
   },
   "main": "./index.js",
   "files": [
@@ -165,6 +168,7 @@
     "babel-watch": "^2.0.2",
     "brunch": "^2.5.2",
     "brunch-static": "^1.1.1",
+    "chai": "^3.5.0",
     "cheerio": "^0.22.0",
     "concurrently": "^2.2.0",
     "cssnano": "^3.4.0",
@@ -188,6 +192,15 @@
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
+    "karma": "^1.2.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^1.0.0",
+    "karma-json-fixtures-preprocessor": "0.0.6",
+    "karma-mocha": "^1.1.1",
+    "mocha": "^3.0.2",
     "nyc": "^8.1.0",
     "postcss-brunch": "^2.0.1",
     "react-addons-test-utils": "^15.3.0",
