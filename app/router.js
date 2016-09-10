@@ -9,7 +9,7 @@ export const configureRouter = ({
   defaultRoute = 'home',
   useHash = false
 }: {
-  defaultRoute: string,
+  defaultRoute?: string,
   useHash?: boolean
 }) => (
   createRouter(routes, {
