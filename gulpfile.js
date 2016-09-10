@@ -22,7 +22,7 @@ let paths = {
 paths = Object.assign(paths, {
   html: `${paths.build}/**/*.html`,
   images: `${paths.build}/**/*.{gif,jpg,png}`,
-  scripts: `(${paths.src}|${paths.server})/**/*.js`,
+  scripts: `{${paths.src},${paths.server}}/**/*.js`,
   styles: `${paths.src}/**/*.scss`
 })
 
