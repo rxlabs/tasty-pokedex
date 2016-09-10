@@ -6,12 +6,12 @@ import { render } from 'react-dom'
 
 import main from './main'
 
-export default async () => {
+export const app = async (
+  rootElement: any,
+  stateElement: any,
+  preloadedState: Object
+) => {
   try {
-    const preloadedState = window.__PRELOADED_STATE__
-    const rootElement = document.getElementById('root')
-    const stateElement = document.getElementById('__PRELOADED_STATE__')
-
     const { rootComponent } = await main({
       useHash: process.env.NODE_ENV === 'production' &&
                preloadedState === undefined,
@@ -25,8 +25,6 @@ export default async () => {
     if (stateElement && stateElement.parentElement) {
       stateElement.parentElement.removeChild(stateElement)
     }
-
-    delete window.__PRELOADED_STATE__
   } catch (err) {
     if (process.env.NODE_ENV === 'production') {
       console.log(err)
@@ -34,4 +32,14 @@ export default async () => {
       throw err
     }
   }
+}
+
+export default (document: any, window: any) => {
+  app(
+    document.getElementById('root'),
+    document.getElementById('__PRELOADED_STATE__'),
+    window.__PRELOADED_STATE__
+  ).then(() => {
+    delete window.__PRELOADED_STATE__
+  })
 }
