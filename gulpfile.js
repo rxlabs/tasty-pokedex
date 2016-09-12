@@ -6,6 +6,7 @@ const path = require('path')
 const del = require('del')
 const gitRevSync = require('git-rev-sync')
 const ghpages = require('gh-pages')
+const swPrecache = require('sw-precache')
 const runSequence = require('run-sequence')
 const gulp = require('gulp')
 const $ = require('gulp-load-plugins')()
@@ -49,7 +50,8 @@ gulp.task('minify', [
 gulp.task('optimize', (done) => (
   runSequence(
     'minify',
-    'rev'
+    'rev',
+    'sw-precache'
   )
 ))
 
@@ -147,7 +149,8 @@ gulp.task('rev', () => {
     'humans.txt',
     'robots.txt',
     'crossdomain.xml',
-    'image.png'
+    'image.png',
+    'service-worker.js'
   ]
 
   const revAll = new $.revAll({ // eslint-disable-line new-cap
@@ -161,6 +164,21 @@ gulp.task('rev', () => {
   return gulp.src(`${paths.build}/**`)
     .pipe(revAll.revision())
     .pipe(gulp.dest(dist.client))
+})
+
+gulp.task('sw-precache', (done) => {
+  swPrecache.write(path.join(dist.client, 'service-worker.js'), {
+    cacheId: pkg.name,
+    verbose: process.env.DEBUG === 'true',
+    staticFileGlobs: [
+      `${dist.client}/**/*`
+    ],
+    stripPrefix: dist.client,
+    replacePrefix: typeof process.env.ASSET_PREFIX === 'string'
+      ? process.env.ASSET_PREFIX
+      : '/tasty-pokedex',
+    dontCacheBustUrlsMatching: /./
+  }, done)
 })
 
 gulp.task('deploy', (done) => {
