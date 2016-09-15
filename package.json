@@ -47,7 +47,7 @@
 
     "heroku-postbuild": "npm run dist",
 
-    "format": "standard --fix",
+    "format": "concurrently 'standard --fix' 'stylefmt -R app'",
     "report": "nyc report",
     "integration": "karma start --single-run",
 
@@ -132,6 +132,9 @@
       "Generator"
     ]
   },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
   "engines": {
     "node": "6.5.0"
   },
@@ -170,6 +173,7 @@
     "brunch-static": "^1.2.1",
     "chai": "^3.5.0",
     "cheerio": "^0.22.0",
+    "clean-css-brunch": "^2.0.0",
     "concurrently": "^2.2.0",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
@@ -187,8 +191,8 @@
     "gulp-load-plugins": "^1.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rev-all": "^0.8.24",
-    "gulp-sass-lint": "^1.1.1",
     "gulp-standard": "^8.0.0",
+    "gulp-stylelint": "^3.2.0",
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
@@ -205,7 +209,8 @@
     "postcss-brunch": "^2.0.1",
     "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.2.2",
-    "sass-brunch": "^2.0.0",
+    "stylefmt": "^4.3.0",
+    "stylelint-config-standard": "^13.0.0",
     "uglify-js-brunch": "^2.0.1"
   }
 }

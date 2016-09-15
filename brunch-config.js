@@ -31,19 +31,6 @@ exports.config = {
     hostname: '0.0.0.0'
   },
 
-  overrides: {
-    production: {
-      plugins: {
-        postcss: {
-          processors: [
-            require('autoprefixer'),
-            require('cssnano')
-          ]
-        }
-      }
-    }
-  },
-
   plugins: {
     babel: require('./package.json').babel,
 
@@ -51,12 +38,6 @@ exports.config = {
       processors: [
         require('autoprefixer')
       ]
-    },
-
-    sass: {
-      options: {
-        includePaths: ['node_modules']
-      }
     },
 
     static: {
