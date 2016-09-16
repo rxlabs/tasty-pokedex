@@ -31,7 +31,7 @@ export default ({
     try {
       const { html, state } = await render(req.originalUrl)
       const template = await fs.readFile(path.join(assets, 'index.html'))
-      const response = injectIntoTemplate({
+      const { response } = injectIntoTemplate({
         html,
         state,
         template: template.toString()
