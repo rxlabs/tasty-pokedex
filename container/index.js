@@ -14,9 +14,15 @@ process.on('SIGTERM', () => {
   process.exit()
 })
 
-main({
-  ssl: true,
-  cert: fs.readFileSync(`${sslPath}.crt`),
-  key: fs.readFileSync(`${sslPath}.key`),
-  port: 443
-})
+const ssl = process.env.SSL === 'true'
+const port = parseInt(process.env.PORT) || 80
+
+let cert = ''
+let key = ''
+
+if (ssl) {
+  cert = fs.readFileSync(`${sslPath}.crt`)
+  key = fs.readFileSync(`${sslPath}.key`)
+}
+
+main({port, ssl, cert, key})

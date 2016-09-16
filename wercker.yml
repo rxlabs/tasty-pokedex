@@ -39,7 +39,7 @@ push:
         cmd: .
         working-dir: /srv
         volumes: /etc/ssl/private
-        env: '"NODE_ENV=production"'
+        env: '"NODE_ENV=production", "PORT=443", "SSL=true"'
         author: $MAINTAINER
         repository: rxlabs/tasty-pokedex
         tag: $DOCKER_HUB_TAG
