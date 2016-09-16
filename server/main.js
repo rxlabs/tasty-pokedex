@@ -22,6 +22,7 @@ export default ({
   port?: number
 }) => {
   const app = express()
+  const template = fs.readFileSync(path.join(assets, 'index.html'))
 
   app.use(express.static(assets, {
     index: false
@@ -30,7 +31,6 @@ export default ({
   app.get('/*', async (req, res) => {
     try {
       const { html, state } = await render(req.originalUrl)
-      const template = await fs.readFile(path.join(assets, 'index.html'))
       const { response } = injectIntoTemplate({
         html,
         state,
