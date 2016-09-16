@@ -6,8 +6,46 @@ build:
         packages: libelf1 # NOTE: Required for Flow.
     - npm-install@1.1.4
     - script:
-        name: dist
-        code: npm run-script dist
+        name: package
+        code: npm run-script package
+
+container:
+  steps:
+    - npm-install@1.1.4:
+        cwd: container/
+        # TODO: Uncomment when the next version of npm is added to Node.
+        # options: --only=prod
+    - script:
+        name: create output directory
+        code: mkdir -p $WERCKER_OUTPUT_DIR
+    - script:
+        name: copy to output directory
+        code: cp -rp container/* $WERCKER_OUTPUT_DIR
+
+push:
+  steps:
+    - script:
+        name: create srv directory
+        code: mkdir -p /srv
+    - script:
+        name: create cert directory
+        code: mkdir -p /etc/ssl/private
+    - script:
+        name: copy source to srv directory
+        code: cp -rp $WERCKER_SOURCE_DIR/* /srv
+    - internal/docker-push:
+        ports: 443
+        entrypoint: node
+        cmd: .
+        working-dir: /srv
+        volumes: /etc/ssl/private
+        env: '"NODE_ENV=production"'
+        author: $MAINTAINER
+        repository: rxlabs/tasty-pokedex
+        tag: $DOCKER_HUB_TAG
+        username: $DOCKER_HUB_USERNAME
+        password: $DOCKER_HUB_PASSWORD
+        registry: https://registry.hub.docker.com/v2
 
 deploy:
   steps:

@@ -1,0 +1,24 @@
+{
+  "name": "tasty-pokedex-container",
+  "version": "0.0.0",
+  "description": "Tasty Pokédex container.",
+  "main": "index.js",
+  "private": true,
+  "homepage": "https://github.com/rxlabs/tasty-pokedex",
+  "bugs": "https://github.com/rxlabs/tasty-pokedex/issues",
+  "repository": "rxlabs/tasty-pokedex",
+  "license": "MIT",
+  "author": {
+    "name": "Evan Sosenko",
+    "email": "razorx@evansosenko.com"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "tasty-pokedex": "../tasty-pokedex-0.0.0.tgz"
+  }
+}
