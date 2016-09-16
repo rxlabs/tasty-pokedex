@@ -1,4 +1,5 @@
 [ignore]
+<PROJECT_ROOT>/container
 <PROJECT_ROOT>/node_modules/esformatter.*
 <PROJECT_ROOT>/node_modules/gulp-.*
 
