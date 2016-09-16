@@ -1,5 +1,6 @@
 /* @flow */
 
+import https from 'https'
 import { fs } from 'mz'
 import path from 'path'
 
@@ -8,9 +9,13 @@ import express from 'express'
 import render, { injectIntoTemplate } from './render'
 
 export default ({
+  key,
+  cert,
   port = 3000,
   assets = path.join(__dirname, '..', 'client')
 }: {
+  cert?: string,
+  key?: string,
   assets?: string,
   port?: number
 }) => {
@@ -36,7 +41,15 @@ export default ({
     }
   })
 
-  app.listen(port, () => {
-    console.log(`Express server listening on port ${port}.`)
-  })
+  if (typeof cert !== 'undefined' && typeof key !== 'undefined') {
+    https.createServer({
+      key: key,
+      cert: cert
+    }, app).listen(port)
+    console.log(`Running on https://localhost:${port}\n`)
+  } else {
+    app.listen(port, () => {
+      console.log(`Running on http://localhost:${port}\n`)
+    })
+  }
 }
