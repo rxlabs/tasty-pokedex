@@ -11,11 +11,13 @@ import render, { injectIntoTemplate } from './render'
 export default ({
   key,
   cert,
+  ssl = false,
   port = 3000,
   assets = path.join(__dirname, '..', 'client')
 }: {
   cert?: string,
   key?: string,
+  ssl?: boolean,
   assets?: string,
   port?: number
 }) => {
@@ -41,7 +43,7 @@ export default ({
     }
   })
 
-  if (typeof cert !== 'undefined' && typeof key !== 'undefined') {
+  if (ssl) {
     https.createServer({
       key: key,
       cert: cert
