@@ -22,6 +22,7 @@ export const injectIntoTemplate = ({
   const $ = cheerio.load(template)
 
   $(`#${id}`).append(html)
+  $('body').append('<div id="universal"></div>')
 
   if (typeof state !== 'undefined') {
     const script = `window.__PRELOADED_STATE__ = ${JSON.stringify(state)}`
