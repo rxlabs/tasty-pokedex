@@ -34,6 +34,16 @@ exports.config = {
   plugins: {
     babel: require('./package.json').babel,
 
+    swPrecache: {
+      swFileName: 'service-worker.js',
+      options: {
+        stripPrefix: 'public',
+        staticFileGlobs: [
+          'public/**/*'
+        ]
+      }
+    },
+
     postcss: {
       processors: [
         require('autoprefixer')
