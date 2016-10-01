@@ -10,7 +10,7 @@ node_js:
   - 5
 
 after_success:
-  - npm run Integration
+  - npm run integration
 
 after_script:
   - npm install -g codecov
