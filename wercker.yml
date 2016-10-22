@@ -1,4 +1,4 @@
-box: node:6.5.0
+box: node:6.8.1
 
 build:
   steps:
@@ -13,8 +13,7 @@ container:
   steps:
     - npm-install@1.1.4:
         cwd: container/
-        # TODO: Uncomment when the next version of npm is added to Node.
-        # options: --only=prod
+        options: --only=prod
     - script:
         name: create output directory
         code: mkdir -p $WERCKER_OUTPUT_DIR
