@@ -52,7 +52,7 @@
     "integration": "karma start --single-run",
 
     "client": "brunch watch --server",
-    "server": "babel-watch ./server",
+    "server": "BABEL_ENV=node babel-watch ./server",
     "watch": "gulp watch",
     "watch:test": "ava --watch",
     "watch:integration": "karma start"
@@ -76,6 +76,15 @@
         ],
         "presets": [
           "node6"
+        ],
+        "plugins": [
+          [
+            "css-modules-transform",
+            {
+              "preprocessCss": "./preprocess-css.js",
+              "generateScopedName": "[name]__[local]___[hash:base64:5]"
+            }
+          ]
         ]
       },
       "development": {
@@ -164,6 +173,7 @@
     "ava": "^0.16.0",
     "babel-brunch": "^6.0.6",
     "babel-eslint": "^6.1.2",
+    "babel-plugin-css-modules-transform": "^1.1.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-node6": "^11.0.0",
     "babel-preset-react": "^6.11.1",
@@ -206,7 +216,7 @@
     "karma-mocha": "^1.1.1",
     "mocha": "^3.0.2",
     "nyc": "^8.1.0",
-    "postcss-brunch": "^2.0.1",
+    "postcss-brunch": "github:rxfork/postcss-brunch#compiler",
     "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.2.2",
     "stylefmt": "^4.3.0",
