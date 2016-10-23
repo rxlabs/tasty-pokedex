@@ -1,6 +1,7 @@
 /* @flow */
 
 import './polyfills'
+import './styles/main.css'
 
 import { render } from 'react-dom'
 
