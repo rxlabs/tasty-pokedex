@@ -220,7 +220,7 @@
     "karma-mocha": "^1.1.1",
     "mocha": "^3.0.2",
     "nyc": "^8.1.0",
-    "postcss-brunch": "github:rxfork/postcss-brunch#compiler",
+    "postcss-brunch": "^2.0.5",
     "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.2.2",
     "stylefmt": "^4.3.1",
