@@ -1427,9 +1427,9 @@
       }
     },
     "concurrently": {
-      "version": "2.2.0",
-      "from": "concurrently@>=2.2.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/concurrently/-/concurrently-2.2.0.tgz",
+      "version": "3.1.0",
+      "from": "concurrently@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/concurrently/-/concurrently-3.1.0.tgz",
       "dependencies": {
         "ansi-regex": {
           "version": "0.2.1",
@@ -1456,20 +1456,10 @@
           "from": "commander@2.6.0",
           "resolved": "https://registry.npmjs.org/commander/-/commander-2.6.0.tgz"
         },
-        "cross-spawn": {
-          "version": "0.2.9",
-          "from": "cross-spawn@>=0.2.9 <0.3.0",
-          "resolved": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-0.2.9.tgz"
-        },
         "has-ansi": {
           "version": "0.1.0",
           "from": "has-ansi@>=0.1.0 <0.2.0",
           "resolved": "https://registry.npmjs.org/has-ansi/-/has-ansi-0.1.0.tgz"
-        },
-        "lru-cache": {
-          "version": "2.7.3",
-          "from": "lru-cache@>=2.5.0 <3.0.0",
-          "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-2.7.3.tgz"
         },
         "strip-ansi": {
           "version": "0.3.0",
@@ -3286,9 +3276,9 @@
       }
     },
     "gulp-htmlmin": {
-      "version": "2.0.0",
-      "from": "gulp-htmlmin@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/gulp-htmlmin/-/gulp-htmlmin-2.0.0.tgz"
+      "version": "3.0.0",
+      "from": "gulp-htmlmin@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/gulp-htmlmin/-/gulp-htmlmin-3.0.0.tgz"
     },
     "gulp-imagemin": {
       "version": "3.0.3",
@@ -3311,9 +3301,9 @@
       "resolved": "https://registry.npmjs.org/gulp-rename/-/gulp-rename-1.2.2.tgz"
     },
     "gulp-rev-all": {
-      "version": "0.8.24",
-      "from": "gulp-rev-all@>=0.8.24 <0.9.0",
-      "resolved": "https://registry.npmjs.org/gulp-rev-all/-/gulp-rev-all-0.8.24.tgz",
+      "version": "0.9.7",
+      "from": "gulp-rev-all@>=0.9.7 <0.10.0",
+      "resolved": "https://registry.npmjs.org/gulp-rev-all/-/gulp-rev-all-0.9.7.tgz",
       "dependencies": {
         "ansi-regex": {
           "version": "0.2.1",
@@ -3621,26 +3611,6 @@
       "from": "html-brunch-static@>=1.2.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/html-brunch-static/-/html-brunch-static-1.3.1.tgz",
       "dependencies": {
-        "async": {
-          "version": "0.2.10",
-          "from": "async@>=0.2.6 <0.3.0",
-          "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
-        },
-        "camelcase": {
-          "version": "1.2.1",
-          "from": "camelcase@>=1.0.2 <2.0.0",
-          "resolved": "https://registry.npmjs.org/camelcase/-/camelcase-1.2.1.tgz"
-        },
-        "cliui": {
-          "version": "2.1.0",
-          "from": "cliui@>=2.1.0 <3.0.0",
-          "resolved": "https://registry.npmjs.org/cliui/-/cliui-2.1.0.tgz"
-        },
-        "html-minifier": {
-          "version": "3.1.0",
-          "from": "html-minifier@>=3.0.1 <4.0.0",
-          "resolved": "https://registry.npmjs.org/html-minifier/-/html-minifier-3.1.0.tgz"
-        },
         "lodash.isplainobject": {
           "version": "3.2.0",
           "from": "lodash.isplainobject@>=3.0.0 <4.0.0",
@@ -3650,26 +3620,6 @@
           "version": "3.3.2",
           "from": "lodash.merge@>=3.3.2 <4.0.0",
           "resolved": "https://registry.npmjs.org/lodash.merge/-/lodash.merge-3.3.2.tgz"
-        },
-        "uglify-js": {
-          "version": "2.7.3",
-          "from": "uglify-js@>=2.7.0 <2.8.0",
-          "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.7.3.tgz"
-        },
-        "window-size": {
-          "version": "0.1.0",
-          "from": "window-size@0.1.0",
-          "resolved": "https://registry.npmjs.org/window-size/-/window-size-0.1.0.tgz"
-        },
-        "wordwrap": {
-          "version": "0.0.2",
-          "from": "wordwrap@0.0.2",
-          "resolved": "https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz"
-        },
-        "yargs": {
-          "version": "3.10.0",
-          "from": "yargs@>=3.10.0 <3.11.0",
-          "resolved": "https://registry.npmjs.org/yargs/-/yargs-3.10.0.tgz"
         }
       }
     },
@@ -3679,9 +3629,9 @@
       "resolved": "https://registry.npmjs.org/html-comment-regex/-/html-comment-regex-1.1.1.tgz"
     },
     "html-minifier": {
-      "version": "2.1.7",
-      "from": "html-minifier@>=2.1.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/html-minifier/-/html-minifier-2.1.7.tgz"
+      "version": "3.1.0",
+      "from": "html-minifier@>=3.0.3 <4.0.0",
+      "resolved": "https://registry.npmjs.org/html-minifier/-/html-minifier-3.1.0.tgz"
     },
     "html-tags": {
       "version": "1.1.1",
@@ -7637,6 +7587,11 @@
       "from": "sparkles@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/sparkles/-/sparkles-1.0.0.tgz"
     },
+    "spawn-default-shell": {
+      "version": "1.1.0",
+      "from": "spawn-default-shell@>=1.1.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/spawn-default-shell/-/spawn-default-shell-1.1.0.tgz"
+    },
     "spdx-correct": {
       "version": "1.0.2",
       "from": "spdx-correct@>=1.0.0 <1.1.0",
@@ -7882,7 +7837,7 @@
     },
     "stylefmt": {
       "version": "4.3.1",
-      "from": "stylefmt@>=4.3.0 <5.0.0",
+      "from": "stylefmt@>=4.3.1 <5.0.0",
       "resolved": "https://registry.npmjs.org/stylefmt/-/stylefmt-4.3.1.tgz",
       "dependencies": {
         "cosmiconfig": {
@@ -8181,6 +8136,11 @@
       "from": "traverse@>=0.6.6 <0.7.0",
       "resolved": "https://registry.npmjs.org/traverse/-/traverse-0.6.6.tgz"
     },
+    "tree-kill": {
+      "version": "1.1.0",
+      "from": "tree-kill@>=1.1.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/tree-kill/-/tree-kill-1.1.0.tgz"
+    },
     "trim-newlines": {
       "version": "1.0.0",
       "from": "trim-newlines@>=1.0.0 <2.0.0",
@@ -8254,9 +8214,9 @@
       "resolved": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.10.tgz"
     },
     "uglify-js": {
-      "version": "2.6.4",
-      "from": "uglify-js@>=2.6.0 <2.7.0",
-      "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.6.4.tgz",
+      "version": "2.7.3",
+      "from": "uglify-js@>=2.7.0 <2.8.0",
+      "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.7.3.tgz",
       "dependencies": {
         "async": {
           "version": "0.2.10",
@@ -8293,7 +8253,44 @@
     "uglify-js-brunch": {
       "version": "2.0.1",
       "from": "uglify-js-brunch@>=2.0.1 <3.0.0",
-      "resolved": "https://registry.npmjs.org/uglify-js-brunch/-/uglify-js-brunch-2.0.1.tgz"
+      "resolved": "https://registry.npmjs.org/uglify-js-brunch/-/uglify-js-brunch-2.0.1.tgz",
+      "dependencies": {
+        "async": {
+          "version": "0.2.10",
+          "from": "async@>=0.2.6 <0.3.0",
+          "resolved": "https://registry.npmjs.org/async/-/async-0.2.10.tgz"
+        },
+        "camelcase": {
+          "version": "1.2.1",
+          "from": "camelcase@>=1.0.2 <2.0.0",
+          "resolved": "https://registry.npmjs.org/camelcase/-/camelcase-1.2.1.tgz"
+        },
+        "cliui": {
+          "version": "2.1.0",
+          "from": "cliui@>=2.1.0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/cliui/-/cliui-2.1.0.tgz"
+        },
+        "uglify-js": {
+          "version": "2.6.4",
+          "from": "uglify-js@>=2.6.1 <2.7.0",
+          "resolved": "https://registry.npmjs.org/uglify-js/-/uglify-js-2.6.4.tgz"
+        },
+        "window-size": {
+          "version": "0.1.0",
+          "from": "window-size@0.1.0",
+          "resolved": "https://registry.npmjs.org/window-size/-/window-size-0.1.0.tgz"
+        },
+        "wordwrap": {
+          "version": "0.0.2",
+          "from": "wordwrap@0.0.2",
+          "resolved": "https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz"
+        },
+        "yargs": {
+          "version": "3.10.0",
+          "from": "yargs@>=3.10.0 <3.11.0",
+          "resolved": "https://registry.npmjs.org/yargs/-/yargs-3.10.0.tgz"
+        }
+      }
     },
     "uglify-to-browserify": {
       "version": "1.0.2",

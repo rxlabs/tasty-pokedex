@@ -58,6 +58,9 @@
     "watch:integration": "karma start"
   },
   "main": "./index.js",
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
   "files": [
     "npm-shrinkwrap.json",
     "index.js",
@@ -184,7 +187,7 @@
     "chai": "^3.5.0",
     "cheerio": "^0.22.0",
     "clean-css-brunch": "^2.0.0",
-    "concurrently": "^2.2.0",
+    "concurrently": "^3.0.0",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
     "enzyme": "^2.4.1",
@@ -196,11 +199,11 @@
     "gulp-cli": "^1.2.0",
     "gulp-flowtype": "^1.0.0",
     "gulp-htmlhint": "^0.3.1",
-    "gulp-htmlmin": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.0.1",
     "gulp-load-plugins": "^1.2.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-rev-all": "^0.8.24",
+    "gulp-rev-all": "^0.9.7",
     "gulp-standard": "^8.0.0",
     "gulp-stylelint": "^3.2.0",
     "gulp-watch": "^4.3.5",
@@ -219,7 +222,7 @@
     "postcss-brunch": "github:rxfork/postcss-brunch#compiler",
     "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.2.2",
-    "stylefmt": "^4.3.0",
+    "stylefmt": "^4.3.1",
     "stylelint-config-standard": "^13.0.0",
     "uglify-js-brunch": "^2.0.1"
   }
