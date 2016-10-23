@@ -8,6 +8,7 @@ const gitRevSync = require('git-rev-sync')
 const ghpages = require('gh-pages')
 const runSequence = require('run-sequence')
 const gulp = require('gulp')
+const gulplog = require('gulplog')
 const $ = require('gulp-load-plugins')()
 
 const pkg = require('./package.json')
@@ -24,8 +25,12 @@ let paths = {
 paths = Object.assign(paths, {
   html: `${paths.build}/**/*.html`,
   images: `${paths.build}/**/*.{gif,jpg,png}`,
-  scripts: `{.,${paths.src},${paths.server},${paths.test},${paths.container}}/*.js`,
-  styles: `${paths.src}/**/*.css`
+  styles: `${paths.src}/**/*.css`,
+  scripts: [
+    '*.js',
+    `${paths.container}/*.js`,
+    `{${paths.src},${paths.server},${paths.test}}/**/*.js`
+  ]
 })
 
 const dist = {
@@ -93,7 +98,11 @@ gulp.task('stylelint', () => (
 
 gulp.task('watch:html', () => (
   gulp.src(paths.html)
-    .pipe($.watch(paths.html))
+    .pipe($.watch(paths.html, vinyl => {
+      if (vinyl.event === 'change') {
+        gulplog.info(`Linted ${vinyl.relative}`)
+      }
+    }))
     .pipe($.plumber())
     .pipe($.htmlhint())
     .pipe($.htmlhint.reporter())
@@ -101,7 +110,11 @@ gulp.task('watch:html', () => (
 
 gulp.task('watch:scripts', () => (
   gulp.src(paths.scripts)
-    .pipe($.watch(paths.scripts))
+    .pipe($.watch(paths.scripts, vinyl => {
+      if (vinyl.event === 'change') {
+        gulplog.info(`Linted ${vinyl.relative}`)
+      }
+    }))
     .pipe($.plumber())
     .pipe($.standard())
     .pipe($.standard.reporter('default'))
