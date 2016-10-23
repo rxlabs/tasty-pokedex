@@ -165,7 +165,7 @@
     "redux-actions": "^0.12.0",
     "redux-logger": "^2.6.1",
     "redux-router5": "^4.2.0",
-    "redux-saga": "^0.11.0",
+    "redux-saga": "^0.12.0",
     "router5": "^4.0.4",
     "router5.helpers": "^1.1.0",
     "sanitize.css": "^4.1.0"
@@ -175,7 +175,7 @@
     "autoprefixer": "^6.3.1",
     "ava": "^0.16.0",
     "babel-brunch": "^6.0.6",
-    "babel-eslint": "^6.1.2",
+    "babel-eslint": "^7.0.0",
     "babel-plugin-css-modules-transform": "^1.1.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-node6": "^11.0.0",
@@ -192,7 +192,7 @@
     "del-cli": "^0.2.0",
     "enzyme": "^2.4.1",
     "eslint-plugin-flowtype": "^2.17.1",
-    "flow-bin": "^0.32.0",
+    "flow-bin": "^0.33.0",
     "gh-pages": "^0.11.0",
     "git-rev-sync": "^1.4.0",
     "gulp": "^3.9.0",
@@ -223,7 +223,7 @@
     "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.2.2",
     "stylefmt": "^4.3.1",
-    "stylelint-config-standard": "^13.0.0",
+    "stylelint-config-standard": "^14.0.0",
     "uglify-js-brunch": "^2.0.1"
   }
 }
