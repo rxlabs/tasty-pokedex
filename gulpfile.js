@@ -16,6 +16,7 @@ let paths = {
   src: 'app',
   server: 'server',
   test: 'test',
+  container: 'container',
   build: 'public',
   dist: 'dist'
 }
@@ -23,7 +24,7 @@ let paths = {
 paths = Object.assign(paths, {
   html: `${paths.build}/**/*.html`,
   images: `${paths.build}/**/*.{gif,jpg,png}`,
-  scripts: `{${paths.src},${paths.server},${paths.test}}/**/*.js`,
+  scripts: `{${paths.src},${paths.server},${paths.test},${paths.container}}/**/*.js`,
   styles: `${paths.src}/**/*.css`
 })
 
