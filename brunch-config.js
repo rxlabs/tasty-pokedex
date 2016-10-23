@@ -37,8 +37,9 @@ exports.config = {
     postcss: {
       modules: {
         generateScopedName: require('./package.json').babel.env.node.plugins
-          .find(p => typeof p !== 'string' && p[0] === 'css-modules-transform')
-          [1].generateScopedName
+          .find(p => (
+            typeof p !== 'string' && p[0] === 'css-modules-transform')
+          )[1].generateScopedName
       },
       processors: [
         require('autoprefixer')
