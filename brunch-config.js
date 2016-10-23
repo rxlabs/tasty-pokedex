@@ -1,10 +1,4 @@
 exports.config = {
-  npm: {
-    styles: {
-      'sanitize.css': ['sanitize.css']
-    }
-  },
-
   conventions: {
     ignored: [
       /[\\/]_/,
@@ -42,7 +36,8 @@ exports.config = {
           )[1].generateScopedName
       },
       processors: [
-        require('autoprefixer')
+        require('postcss-import')(),
+        require('postcss-cssnext')()
       ]
     },
 

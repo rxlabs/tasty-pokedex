@@ -28,6 +28,7 @@ paths = Object.assign(paths, {
   styles: `${paths.src}/**/*.css`,
   scripts: [
     '*.js',
+    'vendor/initialize.js',
     `${paths.container}/*.js`,
     `{${paths.src},${paths.server},${paths.test}}/**/*.js`
   ]
