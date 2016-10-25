@@ -28,7 +28,7 @@ export default ({
   blockRender?: boolean
 }) => (
   new Promise((resolve, reject) => {
-    const router = configureRouter({ useHash })
+    const router = configureRouter({useHash})
 
     router.start(currentRoute, (err, route) => {
       if (err) reject(err)
