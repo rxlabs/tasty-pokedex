@@ -15,16 +15,16 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "ava": "ava",
+    "ava": "BABEL_ENV=test ava",
     "brunch": "brunch",
     "flow": "flow",
     "gulp": "gulp",
     "karma": "karma",
-    "nyc": "nyc",
+    "BABEL_ENV=test nyc": "BABEL_ENV=test nyc",
 
     "start": "node ./dist/server",
 
-    "test": "nyc ava",
+    "test": "BABEL_ENV=test nyc ava",
       "pretest": "gulp lint",
       "posttest": "flow",
 
@@ -48,13 +48,13 @@
     "heroku-postbuild": "npm run dist",
 
     "format": "concurrently 'standard --fix' 'stylefmt -R app'",
-    "report": "nyc report",
+    "report": "BABEL_ENV=test nyc report",
     "integration": "karma start --single-run",
 
     "client": "brunch watch --server",
     "server": "BABEL_ENV=node babel-watch ./server",
     "watch": "gulp watch",
-    "watch:test": "ava --watch",
+    "watch:test": "BABEL_ENV=test ava --watch",
     "watch:integration": "karma start"
   },
   "main": "./index.js",
@@ -89,6 +89,12 @@
             }
           ]
         ]
+      },
+      "test": {
+        "presets": [
+          "node6"
+        ],
+        "plugins": ["css-modules-transform"]
       },
       "development": {
         "presets": [
