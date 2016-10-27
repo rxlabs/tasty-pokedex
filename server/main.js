@@ -10,11 +10,7 @@ import render, { injectIntoTemplate } from './render'
 export default ({
   assets = path.join(__dirname, '..', 'client')
 }: {
-  cert?: string,
-  key?: string,
-  ssl?: boolean,
-  assets?: string,
-  port?: number
+  assets?: string
 }) => {
   const app = express()
   const template = fs.readFileSync(path.join(assets, 'index.html'))
