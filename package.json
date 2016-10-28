@@ -20,7 +20,7 @@
     "flow": "flow",
     "gulp": "gulp",
     "karma": "karma",
-    "BABEL_ENV=test nyc": "BABEL_ENV=test nyc",
+    "nyc": "BABEL_ENV=test nyc",
 
     "start": "node ./dist/server",
 
