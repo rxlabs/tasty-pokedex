@@ -37,7 +37,7 @@ export const injectIntoTemplate = ({
   }
 }
 
-export default async function (route: string, state: Object = {}) { // eslint-disable-line
+export default async function (route: string, state: Object = {}) {
   const { router, store, rootComponent } = await main({
     state,
     currentRoute: route,
