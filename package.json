@@ -59,7 +59,10 @@
   },
   "main": "./index.js",
   "stylelint": {
-    "extends": "stylelint-config-standard"
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-idiomatic-order"
+    ]
   },
   "files": [
     "npm-shrinkwrap.json",
@@ -156,9 +159,6 @@
       "Generator"
     ]
   },
-  "stylelint": {
-    "extends": "stylelint-config-standard"
-  },
   "engines": {
     "node": "6.9.1"
   },
@@ -235,6 +235,7 @@
     "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.2.2",
     "stylefmt": "^4.3.1",
+    "stylelint-config-idiomatic-order": "^2.0.0",
     "stylelint-config-standard": "^14.0.0",
     "uglify-js-brunch": "^2.0.1"
   }

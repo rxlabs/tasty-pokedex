@@ -9248,6 +9248,20 @@
         }
       }
     },
+    "stylelint-config-idiomatic-order": {
+      "version": "2.0.0",
+      "from": "stylelint-config-idiomatic-order@latest",
+      "resolved": "https://registry.npmjs.org/stylelint-config-idiomatic-order/-/stylelint-config-idiomatic-order-2.0.0.tgz",
+      "dev": true,
+      "dependencies": {
+        "stylelint-config-standard": {
+          "version": "11.0.0",
+          "from": "stylelint-config-standard@>=11.0.0 <12.0.0",
+          "resolved": "https://registry.npmjs.org/stylelint-config-standard/-/stylelint-config-standard-11.0.0.tgz",
+          "dev": true
+        }
+      }
+    },
     "stylelint-config-standard": {
       "version": "14.0.0",
       "from": "stylelint-config-standard@>=14.0.0 <15.0.0",
