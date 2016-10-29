@@ -100,12 +100,16 @@
       },
       "development": {
         "presets": [
-          "es2015"
+          "es2015",
+          "stage-1",
+          "react"
         ]
       },
       "production": {
         "presets": [
-          "es2015"
+          "es2015",
+          "stage-1",
+          "react"
         ]
       }
     }
