@@ -2246,11 +2246,6 @@
       "resolved": "https://registry.npmjs.org/deep-assign/-/deep-assign-2.0.0.tgz",
       "dev": true
     },
-    "deep-diff": {
-      "version": "0.3.4",
-      "from": "deep-diff@0.3.4",
-      "resolved": "https://registry.npmjs.org/deep-diff/-/deep-diff-0.3.4.tgz"
-    },
     "deep-eql": {
       "version": "0.1.3",
       "from": "deep-eql@>=0.1.3 <0.2.0",
@@ -8410,9 +8405,9 @@
       "resolved": "https://registry.npmjs.org/redux-actions/-/redux-actions-0.12.0.tgz"
     },
     "redux-logger": {
-      "version": "2.7.2",
-      "from": "redux-logger@>=2.6.1 <3.0.0",
-      "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.7.2.tgz"
+      "version": "2.6.1",
+      "from": "redux-logger@>=2.6.1 <2.7.0",
+      "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.6.1.tgz"
     },
     "redux-router5": {
       "version": "4.2.1",
