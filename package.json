@@ -84,7 +84,7 @@
           [
             "css-modules-transform",
             {
-              "preprocessCss": "./preprocess-css.js",
+              "preprocessCss": "./preprocess-css",
               "generateScopedName": "[name]__[local]___[hash:base64:5]"
             }
           ]
@@ -94,7 +94,9 @@
         "presets": [
           "node6"
         ],
-        "plugins": ["css-modules-transform"]
+        "plugins": [
+          "css-modules-transform"
+        ]
       },
       "development": {
         "presets": [
@@ -225,7 +227,7 @@
     "nyc": "^8.1.0",
     "postcss-brunch": "^2.0.5",
     "postcss-cssnext": "^2.8.0",
-    "postcss-import": "^8.1.2",
+    "postcss-import": "^7.1.3",
     "react-addons-test-utils": "^15.3.0",
     "run-sequence": "^1.2.2",
     "stylefmt": "^4.3.1",
